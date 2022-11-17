@@ -1,0 +1,64 @@
+/* general style for html */
+
+body {
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.25rem;
+}
+
+a {
+  color:blueviolet;
+  text-decoration: none;
+}
+
+a:hover {
+  color:black;
+}
+
+button {
+  display: block;
+  background-color: blueviolet;
+  color:white;
+  margin: 0.5rem auto 0.5rem auto;
+  padding: 1rem;
+  border-radius: 70%;
+}
+
+button:hover {
+  background-color: black;
+}
+
+/* styling for containers in the body */
+
+.scores {
+  position: absolute;
+  top: 1rem;
+  left: 3rem;
+}
+
+.timer {
+  position: absolute;
+  top: 1rem;
+  right: 3rem;
+}
+
+.wrapper {
+  margin: 7rem auto 0 auto;
+}
+
+.start {
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+
+h2 {
+  text-align: center;
+}
+
+#feedback {
+  text-align: center;
+  margin-top: 2rem;
+}
