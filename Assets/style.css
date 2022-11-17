@@ -54,11 +54,22 @@ button:hover {
 }
 
 
-h2 {
+h2, h1 {
   text-align: center;
 }
 
 #feedback {
   text-align: center;
   margin-top: 2rem;
+}
+
+ol {
+  display:block;
+  text-align: center;
+}
+
+li {
+  list-style-type: disc;
+  padding: 3rem;
+  
 }

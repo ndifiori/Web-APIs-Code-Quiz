@@ -166,24 +166,42 @@ function endQuiz() {
 
 
 
+
+
 function highScore() {
 
   var initials = initialsID.value.trim();
 
-  if initials !== ''{
+  if (initials !== '') {
+    var highscores = JSON.parse(window.localStorage.getItem('highscores')) || [];
 
+  var newScore = {
+    score: time,
+    initials: initials,
+  };
+
+  highscores.push(newScore);
+  window.localStorage.setItem('highscores', JSON.stringify(highscores));
+
+  window.location.href='highscores.html';
+  
   }
 
 
 }
 
 
+function enterHighScore(event) {
+  if (event.key === 'Enter') {
+    highScore();
+  }
+}
 
 
 
 
 
-
+submitBtn.onclick = highScore;
 
 // this will start the quiz 
 startBtn.onclick = startQuiz;
@@ -191,8 +209,9 @@ startBtn.onclick = startQuiz;
 // this will run the nextquestion function 
 questionChoices.onclick = nextQuestion;
 
+initialsID.onkeyup = enterHighScore;
 
-// submitBtn.onclick = highScore;
+
 
 
 
