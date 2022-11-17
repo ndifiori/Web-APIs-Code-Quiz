@@ -11,7 +11,7 @@ function printScoreList() {
 
   for (var i = 0; i < highscores.length; i += 1){
 
-    var liCreate = document.createElement(<li>);
+    var liCreate = document.createElement('li');
     liCreate.textContent = highscores[i].initials + '-' + highscores[i].score;
 
     var ol = document.getElementById('highscores');
