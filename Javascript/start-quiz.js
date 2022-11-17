@@ -61,6 +61,7 @@ function clockTick() {
   }
 }
 
+
 // let's get the question 
 function question() {
 
@@ -96,6 +97,7 @@ function question() {
 
   }
 }
+
 
 function nextQuestion(event) {
   
@@ -146,6 +148,7 @@ function nextQuestion(event) {
   }
 }
 
+
 function endQuiz() {
 
   // this will clear the timer all together
@@ -163,44 +166,47 @@ function endQuiz() {
 }
 
 
-
-
-
-
-
 function highScore() {
 
+  // stores the initial id after all the questions are done in initial variable and will trim excess spacees
   var initials = initialsID.value.trim();
 
+  // this will make sure that the initials input ins't empty
   if (initials !== '') {
+
+    // if initials isn't empty then check to see if any object was stored otherwise add it to an array
     var highscores = JSON.parse(window.localStorage.getItem('highscores')) || [];
 
+  // this will store our new variable as an object
   var newScore = {
     score: time,
     initials: initials,
   };
 
+  // this will push our our new score into the existing array
   highscores.push(newScore);
+
+  // will set our variable to a string and set it to highscores in the local storage
   window.localStorage.setItem('highscores', JSON.stringify(highscores));
 
+  // this moves us to the next html page that we want to go to after the submit button is hit
   window.location.href='highscores.html';
   
   }
-
-
 }
 
 
 function enterHighScore(event) {
+
+  // the initial input has a key up stroke then run the high score
   if (event.key === 'Enter') {
+
+    // run the high score function that will take us to the next html page
     highScore();
   }
 }
 
-
-
-
-
+// when the submit button is clicked run the highscore function which will redirect us to the next page
 submitBtn.onclick = highScore;
 
 // this will start the quiz 
@@ -209,6 +215,7 @@ startBtn.onclick = startQuiz;
 // this will run the nextquestion function 
 questionChoices.onclick = nextQuestion;
 
+// this ties into the enter high score function
 initialsID.onkeyup = enterHighScore;
 
 
